@@ -3,8 +3,7 @@
 ## Title - Carbon Control 
 
 ## Description
-This application will allow a user to compare their carbon footprint to a standard based on various sustainability criteria. 
-
+This application will allow a user to compare their carbon footprint to a standard based on various sustainability criteria. It will also provide suggestions on how to lower your carbon footprint.
 
 ## User Story
 
