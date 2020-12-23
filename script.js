@@ -34,18 +34,38 @@
        $.ajax({
        url: listQueryURL,
        method: "GET"
-       }).then(function(response) {
-       console.log(response)
+       }).then(function(listResponse) {
+       console.log(listResponse)
        });
-       var country1 = "EUR"
-       var country2 = "GBP"
-       var amount = "10"
+
+
+       $("#convert").on("click", function(event){
+       event.preventDefault();
+       console.log("clicked")
+       var country1 = $("#country1").val()
+       var country2 = $("#country2").val()
+       var amount = $("#amount").val()
        var convertQueryURL = "https://api.getgeoapi.com/api/v2/currency/convert?api_key=b1785630c546994e1265e973c055fa4a09c9f1a5&from=" + country1 + "&to=" + country2+ "&amount=" + amount + "&format=json";
 
        $.ajax({
        url: convertQueryURL,
        method: "GET"
-       }).then(function(response) {
-       console.log(response)
+       }).then(function(conversionResponse) {
+       console.log(conversionResponse)
+      
+       console.log(conversionResponse.amount)
+       var convertedAmount = conversionResponse.rates[country2].rate_for_amount
+       convertedAmount = parseFloat(convertedAmount).toFixed(2)
+       
+       // let convertedArray = convertedAmount.split(".")
+
+       console.log(convertedAmount)
+       console.log(parseFloat(convertedAmount).toFixed(2))
+       $("#display-conversion").text(convertedAmount)
+       
+      });
+      
        });
+       
+
 
