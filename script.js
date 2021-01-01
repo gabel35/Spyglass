@@ -19,7 +19,9 @@ $("#countryCode").keypress(function(event) {
       }).then(function(response){
         for (var i = 0;i<response.length;i++){
           var curDiv = $("#resultDiv");
+          $("#resultDiv").attr("style", "height:10rem; width:auto; overflow:auto;");
           var spaceBrk = $("<br>");
+          var lineBrk = $("<hr>");
           countryName = response[i].name;
           var resultName = $("<p id='countryP'>").text("Country: " + countryName);
           curDiv.append(resultName);
@@ -39,7 +41,7 @@ $("#countryCode").keypress(function(event) {
             curDiv.append(resultCurrencyS);
             curDiv.append(spaceBrk)
           }
-          curDiv.append(spaceBrk);
+          curDiv.append(lineBrk);
         } 
       })
   };
