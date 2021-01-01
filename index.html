@@ -17,11 +17,12 @@
 
       <!-- Divided Container-->
 
+
+      <!-- Section 1: Country/Currency Codes -->
       <div class="ui segment">
         <div class="ui two column stackable center aligned grid">
           <div class="ui vertical divider"></div>
           <div class="middle aligned row">
-
             <!--Search Country Codes-->
             <div class="column">
               <div class="ui icon header">
@@ -42,21 +43,20 @@
                 That's ok, type in the first letter, or a combination of letters you know is included in the name.
               </div>
             </div>
-
             <!-- Country Code Results-->
             <div class="column">
               <div class="ui icon header">
                 <i class="world icon"></i>
                 Country Code <!-- Based on User Input would spit out a country code-->
               </div>
-              <div class="field" id="resultDiv"></div>
+              <div class="field" id="resultDivC"></div>
             </div>
           </div>
         </div>
       </div>
     
                       
-      <!-- Currency Converter form -->
+      <!-- Section 2: Currency Converter -->
       <h2>Currency Converter</h2>
       <div class="ui placeholder segment"> 
         <div class="ui two column very relaxed stackable grid">
@@ -95,27 +95,70 @@
         <div class="ui vertical divider">
           <button class="ui black submit button" id="convert">Convert</button>
         </div>
-
       </div>
 
+
+      <!-- Section 3: Language Search -->
       <h3 class="ui header"> What Languages Do They Speak?</h3>
       <p> Many countries around the world speak multiple languages and share languages with different countries. Here you can search by country code to see all of the languages spoken in your chosen country and other countries that share that same language.</p>
-
       <!-- Languages Container // Txt and API-->
       <div class="ui segment">
         <div class="ui two column stackable center aligned grid">
+          <div class="ui vertical divider"></div>
           <div class="middle aligned row">
-                      
-            <!-- Lang Text-->
+            <!--Search Language-->
             <div class="column">
-
-
-              <!-- API-->
-              <!---->
+              <div class="field">
+                <div class="ui search">
+                  <div class="ui icon input">
+                    <input class="prompt" id="countryLang" type="text" placeholder="Search countries...">
+                    <i class="search icon" id="languageCodeBtn"></i>
+                  </div>
+                  <div class="results"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Language Results-->
+            <div class="column">
+              <div class="ui icon header">
+              <!-- Based on User Input would spit out a country's languages-->
+              </div>
+              <div class="field" id="resultDivL"></div>
             </div>
           </div>
         </div>
       </div>
+
+
+      <!-- Section 4: Other Details -->
+      <h3 class="ui header"> Want More Details About A Country?</h3>
+      <!-- Country Detail Container-->
+      <div class="ui segment">
+        <div class="ui two column stackable center aligned grid">
+          <div class="ui vertical divider"></div>
+          <div class="middle aligned row">
+            <!--Search Country-->
+            <div class="column">
+              <div class="field">
+                <div class="ui search">
+                  <div class="ui icon input">
+                    <input class="prompt" id="countryDetails" type="text" placeholder="Search countries...">
+                    <i class="search icon" id="detailsCodeBtn"></i>
+                  </div>
+                  <div class="results"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Other Details Results-->
+            <div class="column">
+              <div class="ui icon header"></div>
+              <div class="field" id="resultDivD"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+
     </div>
 
     
