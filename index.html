@@ -37,6 +37,10 @@
                   <div class="results"></div>
                 </div>
               </div>
+              <div class="ui">
+                <p>*Don't know how to spell the country's name?</p>
+                That's ok, type in the first letter, or a combination of letters you know is included in the name.
+              </div>
             </div>
 
             <!-- Country Code Results-->
@@ -52,9 +56,50 @@
       </div>
     
                       
-      <!--Language API-->
-      <!-- Words/ API/ Image-->
-      <!--not working?? -->
+      <!-- Currency Converter form -->
+      <h2>Currency Converter</h2>
+      <div class="ui placeholder segment"> 
+        <div class="ui two column very relaxed stackable grid">
+          <div class="column">
+            <div class="ui form">
+              <div class="field">
+                <div class="ui left icon input">
+                  <label>From: </label>
+                  <input type="text" class="form-control" id="country1" placeholder="Currency to convert from">
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui left icon input">
+                  <label>Amount: </label>
+                  <input type="text" class="form-control" id="amount" placeholder="how much?">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="ui form">
+              <div class="field">
+                <div class="ui right icon input">
+                  <label>To: </label>
+                  <input type="text" class="form-control" id="country2" placeholder="Currency to convert to">
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui right icon input">
+                  <div type="text" class="form-control" id="display-conversion"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui vertical divider">
+          <button class="ui black submit button" id="convert">Convert</button>
+        </div>
+
+      </div>
+
+      <h3 class="ui header"> What Languages Do They Speak?</h3>
+      <p> Many countries around the world speak multiple languages and share languages with different countries. Here you can search by country code to see all of the languages spoken in your chosen country and other countries that share that same language.</p>
 
       <!-- Languages Container // Txt and API-->
       <div class="ui segment">
@@ -63,8 +108,7 @@
                       
             <!-- Lang Text-->
             <div class="column">
-              <h3 class="ui header"> What Languages Do They Speak?</h3>
-              <p> Many countries around the world speak multiple languages and share languages with different countries. Here you can search by country code to see all of the languages spoken in your chosen country and other countries that share that same language.</p>
+
 
               <!-- API-->
               <!---->
@@ -72,26 +116,10 @@
           </div>
         </div>
       </div>
-    
-    
-      <!-- Currency Converter form -->
-      <h2>Currency Converter</h2>
-      
-      <div class="">
-        <label>Amount</label>
-        <input type="text" class="form-control" id="amount">
-      </div>
-      <div class="">
-        <label>From this currency</label>
-        <input type="text" class="form-control" id="country1">
-      </div>
-      <div class="">
-        <label>To this currency</label>
-        <input type="text" class="form-control" id="country2">
-      </div>
-      <button id="convert">Convert</button>
-      <div id="display-conversion"></div>
     </div>
+
+    
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./script.js" async defer></script>
