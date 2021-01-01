@@ -31,8 +31,8 @@
               <div class="field">
                 <div class="ui search">
                   <div class="ui icon input">
-                    <input class="prompt" type="text" placeholder="Search countries...">
-                    <i class="search icon"></i>
+                    <input class="prompt" id="countryCode" type="text" placeholder="Search countries...">
+                    <i class="search icon" id="currencyCodeBtn"></i>
                   </div>
                   <div class="results"></div>
                 </div>
@@ -45,53 +45,53 @@
                 <i class="world icon"></i>
                 Country Code <!-- Based on User Input would spit out a country code-->
               </div>
-              <div class="field"></div>
+              <div class="field" id="resultDiv"></div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-                    
-    <!--Language API-->
-    <!-- Words/ API/ Image-->
-    <!--not working?? -->
+    
+                      
+      <!--Language API-->
+      <!-- Words/ API/ Image-->
+      <!--not working?? -->
 
-    <!-- Languages Container // Txt and API-->
-    <div class="ui segment">
-      <div class="ui two column stackable center aligned grid">
-        <div class="middle aligned row">
-                    
-          <!-- Lang Text-->
-          <div class="column">
-            <h3 class="ui header"> What Languages Do They Speak?</h3>
-            <p> Many countries around the world speak multiple languages and share languages with different countries. Here you can search by country code to see all of the languages spoken in your chosen country and other countries that share that same language.</p>
+      <!-- Languages Container // Txt and API-->
+      <div class="ui segment">
+        <div class="ui two column stackable center aligned grid">
+          <div class="middle aligned row">
+                      
+            <!-- Lang Text-->
+            <div class="column">
+              <h3 class="ui header"> What Languages Do They Speak?</h3>
+              <p> Many countries around the world speak multiple languages and share languages with different countries. Here you can search by country code to see all of the languages spoken in your chosen country and other countries that share that same language.</p>
 
-            <!-- API-->
-            <!---->
+              <!-- API-->
+              <!---->
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
     
     
-    <!-- Currency Converter form -->
-    <h2>Currency Converter</h2>
-    
-    <div class="">
-      <label>Amount</label>
-      <input type="text" class="form-control" id="amount">
+      <!-- Currency Converter form -->
+      <h2>Currency Converter</h2>
+      
+      <div class="">
+        <label>Amount</label>
+        <input type="text" class="form-control" id="amount">
+      </div>
+      <div class="">
+        <label>From this currency</label>
+        <input type="text" class="form-control" id="country1">
+      </div>
+      <div class="">
+        <label>To this currency</label>
+        <input type="text" class="form-control" id="country2">
+      </div>
+      <button id="convert">Convert</button>
+      <div id="display-conversion"></div>
     </div>
-    <div class="">
-      <label>From this currency</label>
-      <input type="text" class="form-control" id="country1">
-    </div>
-    <div class="">
-      <label>To this currency</label>
-      <input type="text" class="form-control" id="country2">
-    </div>
-    <button id="convert">Convert</button>
-    <div id="display-conversion"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./script.js" async defer></script>
