@@ -6,7 +6,7 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href=>
+    <link rel="stylesheet" href="css/main.css">
     <link href=  "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"  rel="stylesheet" /> 
   </head>
   <body>
@@ -14,6 +14,9 @@
       <div class="ui text container"></div> <!--make container into large header on page, maybe background picture?? & change fonts - make h1 3x bigger than h2--> 
       <h1 class="ui inverted header"> Oh The Places You'll Go..</h1>
       <h2> Travel Made Easy</h2>
+      <img class="currency-icon" src="assets/converter-icon-138640.jpg" alt="currency-icon"> 
+      <img class="drive-icon" src="assets/travel-car-1053881.png" alt="drive-icon"> 
+      <img class="converter-icon" src="assets/travel-icon.jpg" alt="converter-icon">
 
       <!-- Divided Container-->
 
@@ -64,6 +67,11 @@
             <div class="ui form">
               <div class="field">
                 <div class="ui left icon input">
+                  <!-- To make drop down tags we could use 
+                  <label for="from_rate">From Rate:</label>
+                    <select id="from_rate" class="form-control" ng-model="from_rate"
+                            ng-options="item as item for item in currency_codes"></select> 
+                          -->
                   <label>From: </label>
                   <input type="text" class="form-control" id="country1" placeholder="Currency to convert from">
                 </div>
