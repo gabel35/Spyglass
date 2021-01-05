@@ -12,7 +12,7 @@ I WANT be able to look up different countries and know a little bit about them a
 SO THAT I can plan a financially sound and enjoyable trip 
 ```
 ## Wireframe
-![Sample Wireframe](wireframe-sample.png)
+![Sample Wireframe](./assets/wireframe-sample.png)
 ## APIs
 ### Rest Countries API
 https://restcountries.eu/#api-endpoints-language
