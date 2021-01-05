@@ -41,7 +41,7 @@
                   <div class="results"></div>
                 </div>
               </div>
-              <div class="ui">
+              <div class="ui countTxt">
                 <p>*Don't know how to spell the country's name?</p>
                 That's ok, type in the first letter, or a combination of letters you know are included in the name.
               </div>
@@ -60,79 +60,86 @@
     
                       
       <!-- Section 2: Currency Converter -->
-      <h2>Currency Converter</h2>
-      <div class="ui placeholder segment"> 
-        <div class="ui two column very relaxed stackable grid">
-          <div class="column">
-            <div class="ui form">
-              <div class="field">
-                <div class="ui left icon input">
-                  <!-- To make drop down tags we could use 
-                  <label for="from_rate">From Rate:</label>
-                    <select id="from_rate" class="form-control" ng-model="from_rate"
-                            ng-options="item as item for item in currency_codes"></select> 
-                          -->
-                  <label>From: </label>
-                  <input type="text" class="form-control" id="country1" placeholder="Currency to convert from">
-                </div>
-              </div>
-              <div class="field">
-                <div class="ui left icon input">
-                  <label>Amount: </label>
-                  <input type="text" class="form-control" id="amount" placeholder="how much?">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="column">
-            <div class="ui form">
-              <div class="field">
-                <div class="ui right icon input">
-                  <label>To: </label>
-                  <input type="text" class="form-control" id="country2" placeholder="Currency to convert to">
-                </div>
-              </div>
-              <div class="field">
-                <div class="ui right icon input">
-                  <div type="text" class="form-control" id="display-conversion"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div>
+        <div class="ui inverted segment">
+          <h2 class="ui inverted header aHeader">Currency Converter</h2>
         </div>
-        <div class="ui divider">
-          <br>
+        <div class="ui placeholder segment"> 
+          <div class="ui two column very relaxed stackable grid">
+            <div class="middle aligned row">
+              <div class="column">
+                <div class="ui form">
+                  <div class="field">
+                    <div class="ui left icon input">
+                      <!-- To make drop down tags we could use 
+                      <label for="from_rate">From Rate:</label>
+                        <select id="from_rate" class="form-control" ng-model="from_rate"
+                                ng-options="item as item for item in currency_codes"></select> 
+                              -->
+                      <label>From: </label>
+                      <input type="text" class="form-control curInput" id="country1" placeholder="Currency Code" style="width: 0px;">
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="ui left icon input">
+                      <label>Amount: </label>
+                      <input type="text" class="form-control curInput" id="amount" placeholder="How Much?" style="width: 0px;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="column">
+              <div class="ui form">
+                <div class="field">
+                  <div class="ui right icon input">
+                    <label>To: </label>
+                    <input type="text" class="form-control curInput" id="country2" placeholder="Currency Code" style="width: 0px;">
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui right icon input segment curResults">
+                    <div type="text" class="form-control" id="display-conversion"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <button class="ui black submit button" id="convert">Convert</button>
+          <br>
         </div>
       </div>
-
+    
 
       <!-- Section 3: Language Search -->
-      <h3 class="ui header"> What Languages Do They Speak?</h3>
-      <p> Many countries around the world speak multiple languages and share languages with different countries. Here you can search by country code to see all of the languages spoken in your chosen country and other countries that share that same language.</p>
-      <!-- Languages Container // Txt and API-->
-      <div class="ui segment">
-        <div class="ui two column stackable center aligned grid">
-          <div class="ui vertical divider"></div>
-          <div class="middle aligned row">
-            <!--Search Language-->
-            <div class="column">
-              <div class="field">
-                <div class="ui search">
-                  <div class="ui icon input">
-                    <input class="prompt" id="countryLang" type="text" placeholder="Search countries...">
-                    <i class="search icon" id="languageCodeBtn"></i>
+      <div>
+        <div class="ui inverted segment">
+          <h3 class="ui inverted header aHeader"> What Languages Do They Speak?</h3>
+          <p class="langTxt"> Many countries around the world speak multiple languages and share languages with different countries. Here you can search by country code to see all of the languages spoken in your chosen country and other countries that share that same language.</p>
+        </div>
+        <!-- Languages Container // Txt and API-->
+        <div class="ui segment">
+          <div class="ui two column stackable center aligned grid">
+            <div class="ui vertical divider"></div>
+            <div class="middle aligned row">
+              <!--Search Language-->
+              <div class="column">
+                <div class="field">
+                  <div class="ui search">
+                    <div class="ui icon input">
+                      <input class="prompt" id="countryLang" type="text" placeholder="Search countries...">
+                      <i class="search icon" id="languageCodeBtn"></i>
+                    </div>
+                    <div class="results"></div>
                   </div>
-                  <div class="results"></div>
                 </div>
               </div>
-            </div>
-            <!-- Language Results-->
-            <div class="column">
-              <div class="ui icon header">
-              <!-- Based on User Input would spit out a country's languages-->
+              <!-- Language Results-->
+              <div class="column">
+                <div class="ui icon header">
+                <!-- Based on User Input would spit out a country's languages-->
+                </div>
+                <div class="field" id="resultDivL"></div>
               </div>
-              <div class="field" id="resultDivL"></div>
             </div>
           </div>
         </div>
@@ -140,32 +147,38 @@
 
 
       <!-- Section 4: Other Details -->
-      <h3 class="ui header"> Want More Details About A Country?</h3>
-      <!-- Country Detail Container-->
-      <div class="ui segment">
-        <div class="ui two column stackable center aligned grid">
-          <div class="ui vertical divider"></div>
-          <div class="middle aligned row">
-            <!--Search Country-->
-            <div class="column">
-              <div class="field">
-                <div class="ui search">
-                  <div class="ui icon input">
-                    <input class="prompt" id="countryDetails" type="text" placeholder="Search countries...">
-                    <i class="search icon" id="detailsCodeBtn"></i>
+      <div>
+        <div class="ui inverted segment">
+          <h3 class="ui inverted header aHeader"> Want More Details About A Country?</h3>
+        </div>
+        <!-- Country Detail Container-->
+        <div class="ui segment">
+          <div class="ui two column stackable center aligned grid">
+            <div class="ui vertical divider"></div>
+            <div class="middle aligned row">
+              <!--Search Country-->
+              <div class="column">
+                <div class="field">
+                  <div class="ui search">
+                    <div class="ui icon input">
+                      <input class="prompt" id="countryDetails" type="text" placeholder="Search countries...">
+                      <i class="search icon" id="detailsCodeBtn"></i>
+                    </div>
+                    <div class="results"></div>
                   </div>
-                  <div class="results"></div>
                 </div>
               </div>
-            </div>
-            <!-- Other Details Results-->
-            <div class="column">
-              <div class="ui icon header"></div>
-              <div class="field" id="resultDivD"></div>
+              <div class="ui vertical divider"></div>
+              <!-- Other Details Results-->
+              <div class="column">
+                <div class="ui icon header"></div>
+                <div class="field" id="resultDivD"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      
       <br>
 
     </div>

@@ -1,7 +1,5 @@
 div {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: bold;
-
 }
 
 .drive-icon {
@@ -35,3 +33,25 @@ div {
     text-align: center;
 }
 
+.aHeader {
+    margin: 80%;
+    padding: 80%;
+    font-weight: bold;
+}
+
+.langTxt {
+    margin: 1%;
+}
+
+.countTxt {
+    margin: 5%
+}
+
+/* .curInput {
+    width: 0px;
+} */
+
+.curResults {
+    display:flex;
+    justify-content: center;
+}

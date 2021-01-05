@@ -12,13 +12,12 @@ function clearD() {
 
 
 //Section 1: Country/Currency Codes//
-$("#countryCode").keypress(function(event) {
+$("#countryCode").on("input", function(event) {
   clearC();
-  var keycode = (event.keyCode ? event.keyCode : event.which);
-  if (keycode == "13") {
-    event.preventDefault();
-    var countryName = $("#countryCode").val().trim();
-    console.log(countryName);
+  event.preventDefault();
+  var countryName = $("#countryCode").val().trim();
+  console.log(countryName);
+  if (countryName != "") {
     var queryURL = "https://restcountries.eu/rest/v2/name/" + countryName;
       $.ajax({
         url: queryURL,
@@ -108,13 +107,12 @@ $("#convert").on("click", function(event){
   
 
 //Section 3: Language Search//
-$("#countryLang").keypress(function(event) {
+$("#countryLang").on("input", function(event) {
   clearL();
-  var keycode = (event.keyCode ? event.keyCode : event.which);
-  if (keycode == "13") {
-    event.preventDefault();
-    var countryName = $("#countryLang").val().trim();
-    console.log(countryName);
+  event.preventDefault();
+  var countryName = $("#countryLang").val().trim();
+  console.log(countryName);
+  if (countryName != "") {
     var queryURL = "https://restcountries.eu/rest/v2/name/" + countryName;
       $.ajax({
         url: queryURL,
@@ -153,13 +151,12 @@ $("#countryLang").keypress(function(event) {
 
 
 //Section 4: Other Country Details//
-$("#countryDetails").keypress(function(event) {
+$("#countryDetails").on("input", function(event) {
   clearD();
-  var keycode = (event.keyCode ? event.keyCode : event.which);
-  if (keycode == "13") {
-    event.preventDefault();
-    var countryName = $("#countryDetails").val().trim();
-    console.log(countryName);
+  event.preventDefault();
+  var countryName = $("#countryDetails").val().trim();
+  console.log(countryName);
+  if (countryName != "") {
     var queryURL = "https://restcountries.eu/rest/v2/name/" + countryName;
       $.ajax({
         url: queryURL,
