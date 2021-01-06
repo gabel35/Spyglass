@@ -80,6 +80,7 @@ $("#convert").on("click", function(event){
   var country1 = $("#country1").val()
   var country2 = $("#country2").val()
   var amount = $("#amount").val()
+  var currencyCon = []
   var convertQueryURL = "https://api.getgeoapi.com/api/v2/currency/convert?api_key=b1785630c546994e1265e973c055fa4a09c9f1a5&from=" + country1 + "&to=" + country2+ "&amount=" + amount + "&format=json";
   
   $.ajax({
@@ -97,7 +98,28 @@ $("#convert").on("click", function(event){
     console.log(convertedAmount)
     console.log(parseFloat(convertedAmount).toFixed(2))
     $("#display-conversion").text(convertedAmount)
-         
+    
+    var currencyInput= {
+      "country1": country1,
+      "country2": country2,
+      "amount1": amount,
+      "amount2": convertedAmount
+    }
+
+    currencyCon.push(currencyInput)
+    console.log(currencyInput)
+
+    var currencyHistory = JSON.stringify(currencyInput)
+    localStorage.setItem("Last Search", currencyHistory)
+    function conversionHistory (){
+      var lastConversion = localStorage.getItem("Last Search");
+      console.log(lastConversion)
+      var lastSearchDiv = $("#lastSearch")
+      var conversionSearch = $("<p>").text(lastConversion[0].amount1 + " " + lastConversion[0].country1 + " = " + lastConversion[0].amount2 + " " + lastConversion[0].country2);
+      lastSearchDiv.append(conversionSearch);
+    }
+    conversionHistory ()
+
   });
         
 });
